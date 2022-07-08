@@ -1,2 +1,8 @@
-<h1>Flats#index</h1>
-<p>Find me in app/views/flats/index.html.erb</p>
+<h1>All Flats</h1>
+<% @flats.each do |flat| %>
+  <p>Name: <%= link_to flat.name, flat_path(flat) %></p>
+  <p>Address: <%= link_to flat.address, flat_path(flat) %></p>
+  <p>Description: <%= link_to flat.description, flat_path(flat) %></p>
+  <p>Price per night: <%= link_to flat.price_per_night, flat_path(flat) %></p>
+  <p>Number of guests: <%= link_to flat.number_of_guests, flat_path(flat) %></p>
+<% end %>
