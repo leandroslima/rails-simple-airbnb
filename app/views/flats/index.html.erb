@@ -1,18 +1,20 @@
 <h1>All Our Flats</h1>
 
-<div class="row">
+<div class="row" style='width: 100%'>
   <% @flats.each do |flat| %>
-      <div class="col-md-4">
-        <div class="card text-white mb-3" style='width: 20rem'>
-          <img src="https://source.unsplash.com/300x200/?room" class='card-img' alt="a beatiful room">
-          <div class="card-img-overlay">
-            <h4 class="card-title"><%= flat.name %></h5>
+      <div class="col-sm-4">
+        <div class="card mb-3" style='width: 20rem; height:25rem'>
+          <img src="https://source.unsplash.com/300x200/?room" class='card-img-top' alt="a beatiful room">
+          <div class="card-body">
+            <h4 class="card-title" style='text-overflow: ellipsis; overflow: hidden; white-space: nowrap'><%= flat.name %></h5>
             <h6 class="card-subtitle"><%= flat.address %></h6>
             <h6 class='card-text'><i class="fa-solid fa-people-roof"></i>   <%= flat.number_of_guests %>
               <i class="fa-solid fa-brazilian-real-sign"></i>   <%= flat.price_per_night %></p>
             </h6>
+            <%= link_to "More Info", flat_path(flat), class: 'btn btn-primary' %>
+            <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-success' %>
+            <%= link_to 'Delete', flat_path(flat), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger' %>
           </div>
-          <h6 class="card-text"><%= link_to flat_path(flat) do %>More Info<% end %></h6>
         </div>
       </div>
   <% end %>
