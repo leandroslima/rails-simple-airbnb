@@ -13,7 +13,7 @@
             </h6>
             <%= link_to "More Info", flat_path(flat), class: 'btn btn-primary' %>
             <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-success' %>
-            <%= link_to 'Delete', flat_path(flat), method: :delete, confirm: "Are you sure?", class: 'btn btn-danger' %>
+            <%= link_to 'Delete', flat_path(flat), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
           </div>
         </div>
       </div>
