@@ -1,8 +1,19 @@
-<h1>All Flats</h1>
-<% @flats.each do |flat| %>
-  <p>Name: <%= link_to flat.name, flat_path(flat) %></p>
-  <p>Address: <%= link_to flat.address, flat_path(flat) %></p>
-  <p>Description: <%= link_to flat.description, flat_path(flat) %></p>
-  <p>Price per night: <%= link_to flat.price_per_night, flat_path(flat) %></p>
-  <p>Number of guests: <%= link_to flat.number_of_guests, flat_path(flat) %></p>
-<% end %>
+<h1>All Our Flats</h1>
+
+<div class="row">
+  <% @flats.each do |flat| %>
+      <div class="col-md-4">
+        <div class="card text-white mb-3" style='width: 20rem'>
+          <img src="https://source.unsplash.com/300x200/?room" class='card-img' alt="a beatiful room">
+          <div class="card-img-overlay">
+            <h4 class="card-title"><%= flat.name %></h5>
+            <h6 class="card-subtitle"><%= flat.address %></h6>
+            <h6 class='card-text'><i class="fa-solid fa-people-roof"></i>   <%= flat.number_of_guests %>
+              <i class="fa-solid fa-brazilian-real-sign"></i>   <%= flat.price_per_night %></p>
+            </h6>
+          </div>
+          <h6 class="card-text"><%= link_to flat_path(flat) do %>More Info<% end %></h6>
+        </div>
+      </div>
+  <% end %>
+</div>
