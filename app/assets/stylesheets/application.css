@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.row {
+  width: 100%
+}
+
+.card-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap
+}

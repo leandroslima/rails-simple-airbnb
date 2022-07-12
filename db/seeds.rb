@@ -17,6 +17,7 @@ guests = (1..5).to_a
     address: Faker::Address.full_address,
     description: Faker::Lorem.paragraph,
     price_per_night: price.sample,
-    number_of_guests: guests.sample
+    number_of_guests: guests.sample,
+    picture_url: "https://source.unsplash.com/1500x1000/?room"
   )
 end
