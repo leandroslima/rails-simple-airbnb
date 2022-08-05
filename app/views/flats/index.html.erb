@@ -13,7 +13,7 @@
     <% @flats.each do |flat| %>
         <div class="col-sm-4">
           <div class="card mb-3" style='width: 20rem; height:25rem'>
-            <img src="https://source.unsplash.com/300x200/?room" class='card-img-top' alt="a beatiful room">
+            <img src="<%= flat.picture_url %>" class='card-img-top' alt="a beatiful room">
             <div class="card-body">
               <h4 class="card-title"><%= flat.name %></h5>
               <h6 class="card-subtitle"><%= flat.address %></h6>
